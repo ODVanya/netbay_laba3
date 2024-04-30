@@ -24,7 +24,7 @@ jobs:
       - name: "Generate code coverage html report"
         run: coverage html --directory ${{ env.COVERAGE_HTML_REPORT_PATH }}
       - name: "Archive pytest and coverage reports"
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         if: ${{!cancelled()}}
         with:
           name: "Test and coverage reports"
@@ -47,7 +47,7 @@ jobs:
       - name: "Checkout repository"
         uses: actions/checkout@v3
       - name: "Publish package as artifact"
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: "Built package"
           path: "src"
